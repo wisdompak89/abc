@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from .models import Blog
 
 # Create your views here.
-def home(requsest):
-    return render(requsest, 'home.html')
+def home(request):
+    blogs = Blog.objects
+    return render(request, 'home.html', {'blogs': blogs})
 
 def new(request):
     full_text = request.GET['fulltext']

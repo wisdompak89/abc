@@ -21,4 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', crudapp.views.home, name = 'home'),
     path('new/', crudapp.views.new, name = 'new'),
+    path('detail/<int:blog_id>', crudapp.views.detail, name='detail'),
 ]
+
